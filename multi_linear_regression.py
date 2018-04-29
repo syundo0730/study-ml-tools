@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib
 import matplotlib.pyplot as plt
-from sklearn.linear_model import LinearRegression, SGDRegressor
+from sklearn.linear_model import LinearRegression, SGDRegressor, Ridge, ElasticNet
 from sklearn.preprocessing import PolynomialFeatures
 from sklearn.pipeline import Pipeline
 import warnings
@@ -16,7 +16,10 @@ y = 0.5 * X**2 + X + 2 + np.random.randn(m, 1)
 
 poly_features = PolynomialFeatures(degree=2, include_bias=False)
 
-lin_reg = LinearRegression()
+# lin_reg = LinearRegression()
+# lin_reg = Ridge(alpha=1, solver="cholesky")
+# lin_reg = ElasticNet(alpha=0.1, l1_ratio=0.5)
+lin_reg = SGDRegressor(penalty="l2")
 reg = Pipeline([
     ('poly', PolynomialFeatures(degree=2, include_bias=False)),
     ('linear', lin_reg)
