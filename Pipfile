@@ -14,6 +14,10 @@ pandas = "*"
 scipy = "*"
 scikit-learn = "*"
 jupyter-contrib-nbextensions = "*"
+tensorflow = "*"
+gym = {extras = ["all"]}
+pillow = "*"
+seaborn = "*"
 
 [requires]
 python_version = "3.6"

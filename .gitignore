@@ -1,1 +1,11 @@
 datasets/
+.ipynb_checkpoints/
+logs/
+images/
+*.index
+*.meta
+*.ckpt*
+*.data*
+tf_logs/
+tf_log*.dot
+checkpoint
